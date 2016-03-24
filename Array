@@ -1,0 +1,59 @@
+/**
+ * Creates an array full of random numbers then prints and sorts the array and can print out the
+ * frequency of certain elements
+ * 
+ * @author Nathan Roller    -02254188 
+ * @version 3/24/2016
+ */
+public class Array
+{
+    private int[] intArray;
+
+    public Array(int num)
+    {
+        intArray = new int[num];
+    }
+
+    public void fill()
+    {
+        for (int i = 0; i < intArray.length; i++)
+        {
+            intArray[i] = (int) (Math.random() * (9 + 1)); //(9 + 1) so that it is 0-9 inclusive
+        }
+    }
+    
+    public void print()
+    {
+        System.out.println("-----------");
+        for (int i = 0; i < intArray.length; i++)
+        {
+            System.out.print("|" + intArray[i]);
+        }
+        System.out.println("|");
+        System.out.println("-----------");
+    }
+    
+    public void sort()
+    {
+        int n = intArray.length;
+        boolean flag;
+        do 
+        {
+            flag = false;
+            for (int i = 1; i < n; i++)
+            {
+                if(intArray[i-1] > intArray[i])
+                {
+                    int tmp = intArray[i];
+                    intArray[i] = intArray[i-1];
+                    intArray[i-1] = tmp;
+                }
+            }
+        } while(flag);
+    }
+    
+    public void printFrequency()
+    {
+        
+    }
+}
