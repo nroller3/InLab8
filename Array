@@ -47,6 +47,7 @@ public class Array
                     int tmp = intArray[i];
                     intArray[i] = intArray[i-1];
                     intArray[i-1] = tmp;
+                    flag = true;
                 }
             }
         } while(flag);
@@ -54,6 +55,16 @@ public class Array
     
     public void printFrequency()
     {
-        
+        int x;
+        int[] counter = new int[10];
+        for (int i = 0; i < intArray.length; i++)
+        {
+            x = intArray[i];
+            counter[x]++;
+        }
+        for (x = 0; x < 10; x++)
+        {
+            System.out.println("There are " + counter[x] + ", " + x + "'s");
+        }
     }
 }
